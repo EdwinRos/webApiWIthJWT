@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using System.Linq;
 using System.Text;
 using webApiWIthJWT.Data;
 
@@ -45,6 +46,21 @@ namespace webApiWIthJWT
 
             services.AddDbContext<databaseContext>(c => c.UseMySQL(connectionString));
 
+            //swagger
+            services.AddSwaggerDocument(settings =>
+            {
+                settings.Title = "JWT API ejemplo";
+                settings.AddSecurity("JWT", Enumerable.Empty<string>(), new NSwag.OpenApiSecurityScheme
+                {
+                    Type = NSwag.OpenApiSecuritySchemeType.ApiKey,
+                    Name = "JWT token ",
+                    In = NSwag.OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Escribir en el input: Bearer {}"
+                });
+              
+            });
+
+            //controladores
             services.AddControllers();
         }
 
@@ -55,11 +71,15 @@ namespace webApiWIthJWT
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            //agregando la autenticacion y la autorizacion para el jwt
             app.UseRouting();
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            //Registramos el generador de swagger y los middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseEndpoints(endpoints =>
             {

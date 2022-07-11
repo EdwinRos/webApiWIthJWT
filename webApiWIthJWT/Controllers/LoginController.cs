@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -27,7 +26,8 @@ namespace webApiWIthJWT.Controllers
             _config = config;
             _databaseContext = databaseContext;
         }
-        //anotancion AllowAnonymous nos permite desactivar la autenticacion a este punto
+
+        //anotancion AllowAnonymous nos permite desactivar la autenticacion a este metodo
         [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult logIn([FromForm] UserLogin userLogin )
@@ -38,11 +38,12 @@ namespace webApiWIthJWT.Controllers
             {
                 var token = Generate(user);
                 var response = new { Token = token };
-                return Ok(JsonSerializer.Serialize(response));
+                return Ok(new { message = "Credenciales correctas", StatusCode = 200,  response } );
             }
             return StatusCode(400, "Credenciales incorrectas");
         }
 
+       /*Metodo que nos permite generar un token*/
         private string Generate(UserModel user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -67,6 +68,7 @@ namespace webApiWIthJWT.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         } 
 
+        /*Inicio de sesion de usuario en la base de datos */
         private UserModel Authenticate(UserLogin userLogin)
         {
             var usuario = _databaseContext.user.Where(
@@ -79,5 +81,6 @@ namespace webApiWIthJWT.Controllers
             return null;
 
         }
+
     }
 }
