@@ -16,6 +16,7 @@ raiz del repo)
  - [Configuracion y desarrollo](#Desarrollo)
  - [Demostracion y nuevo controlador](#Demostracion)
  - [Swagger](#Swagger)
+ - [👹👹👹 Ejercicio 👹👹👹](#Ejercicio) 
 
 # Paquetes
 
@@ -220,3 +221,9 @@ a consultar nuestro metodo protegido de admins.
 Como podemos observar no tenemos ningun codigo 401 de no autorizado nos devuelve nuestra informacion del usuario
 con el que nos hemos loggeado en la app. asi de simple asi de sencillo sin mas configuracion el lo hace automaticamente
 🧙‍♂️🧙‍♂️🧙‍♂️
+
+---
+# Ejercicio
+En este repositorio tenemos solo un metodo de login y uno de obtener la informacion del usuario que ha iniciado sesion, completar este repositorio para poder 
+ingresar mas usuarios con roles diferentes (revisar base de datos) solo los usuarios con rol administrator podran ingresar y eliminar diferentes usuarios .
+
