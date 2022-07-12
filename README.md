@@ -4,7 +4,8 @@
 En este repositorio veremos como proteger nuestras webs Apis con JWT, 
 implementaremos un simple loggin para optener un token en base a un
 usuario existente en nuestra base de datos. tambien veremos lo sencillo
-que es documentar nuestra api con swagger.
+que es documentar nuestra api con swagger. (La base de datos esta en la
+raiz del repo)
 
 
 
