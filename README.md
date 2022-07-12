@@ -11,16 +11,16 @@ que es documentar nuestra api con swagger.
 
 ## Temario
 
- - [Paquetes que se utilizaran](##Paquetes)
- - [Configuracion y desarrollo](##Desarrollo)
- - [Demostracion y nuevo controlador](##Demostracion)
- - [Swagger](##Swagger)
+ - [Paquetes que se utilizaran](#Paquetes)
+ - [Configuracion y desarrollo](#Desarrollo)
+ - [Demostracion y nuevo controlador](#Demostracion)
+ - [Swagger](#Swagger)
 
-## Paquetes
+# Paquetes
 
 ![1](https://i.ibb.co/tDbf6f0/image.png)
 ![](https://i.ibb.co/jR9nC1S/image.png)
-## Desarrollo
+# Desarrollo
 
 #### Configuracion de proyecto
 
@@ -126,7 +126,7 @@ protegidos con autenticación.
 
 
 
-## Demostración
+# Demostración
 
 Crearemos un nuevo controlador al cual llamaremos UserController
 con el cual vamos a probar lo que hemos realizado.
@@ -174,7 +174,7 @@ que no estamos autorizados para acceder.
 
 De esta forma nosotros podemos agregar autenticación a nuestras aplicaciones
 
-## Swagger
+# Swagger
 
 Para documentar con swagger esta misma API haremos lo siguiente
 
