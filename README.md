@@ -1,5 +1,5 @@
 
-# Web API con JWT y Swagger 🤑
+# Web API con JWT y Swagger 
 
 En este repositorio veremos como proteger nuestras webs Apis con JWT, 
 implementaremos un simple loggin para optener un token en base a un
@@ -16,7 +16,7 @@ raiz del repo)
  - [Configuracion y desarrollo](#Desarrollo)
  - [Demostracion y nuevo controlador](#Demostracion)
  - [Swagger](#Swagger)
- - [👹👹👹 Ejercicio 👹👹👹](#Ejercicio) 
+ - [Ejercicio](#Ejercicio) 
 
 # Paquetes
 
